@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreAudio/CoreAudio.h>
 
-NSDictionary* NameToIdDict()
+NSDictionary* IdToName()
 {
     AudioObjectPropertyAddress propertyAddress = {
         kAudioHardwarePropertyDevices,
@@ -87,8 +87,8 @@ NSDictionary* NameToIdDict()
         
         free(bufferList);
         
-        [keys addObject: CFBridgingRelease(deviceName)];
-        [values addObject: [NSNumber numberWithInteger: audioDevices[i]]];
+        [values addObject: CFBridgingRelease(deviceName)];
+        [keys addObject: [NSNumber numberWithInteger: audioDevices[i]]];
     }
     
     free(audioDevices);

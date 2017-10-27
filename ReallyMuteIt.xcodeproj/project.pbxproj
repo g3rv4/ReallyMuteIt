@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1E24CCC71FA37426009D285A /* GetDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 1E24CCC61FA37426009D285A /* GetDevice.m */; };
 		1E68523F1FA2024A003D3B4F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E68523E1FA2024A003D3B4F /* main.swift */; };
+		1E7971F51FA3E8B3001B696B /* GameSense.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E7971F41FA3E8B3001B696B /* GameSense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -30,6 +31,7 @@
 		1E24CCC91FA37CCC009D285A /* GetDevice.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetDevice.h; sourceTree = "<group>"; };
 		1E68523B1FA2024A003D3B4F /* ReallyMuteIt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ReallyMuteIt; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E68523E1FA2024A003D3B4F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1E7971F41FA3E8B3001B696B /* GameSense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameSense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				1E68523E1FA2024A003D3B4F /* main.swift */,
 				1E24CCC61FA37426009D285A /* GetDevice.m */,
 				1E24CCC91FA37CCC009D285A /* GetDevice.h */,
+				1E7971F41FA3E8B3001B696B /* GameSense.swift */,
 			);
 			path = ReallyMuteIt;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				1E24CCC71FA37426009D285A /* GetDevice.m in Sources */,
 				1E68523F1FA2024A003D3B4F /* main.swift in Sources */,
+				1E7971F51FA3E8B3001B696B /* GameSense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,6 @@
 #define GetDevice_h
 #import <Foundation/Foundation.h>
 
-NSDictionary* NameToIdDict();
+NSDictionary* IdToName();
 
 #endif /* GetDevice_h */
