@@ -11,19 +11,25 @@ import CoreAudio
 
 let stdout = FileHandle.standardOutput
 
-var hog: AudioObjectPropertyAddress = AudioObjectPropertyAddress(mSelector: kAudioDevicePropertyHogMode, mScope: kAudioObjectPropertyScopeGlobal, mElement: kAudioObjectPropertyElementMaster);
+var hog: AudioObjectPropertyAddress = AudioObjectPropertyAddress(
+    mSelector: kAudioDevicePropertyHogMode,
+    mScope: kAudioObjectPropertyScopeGlobal,
+    mElement: kAudioObjectPropertyElementMaster);
 var process: pid_t = -1;
 let size: UInt32 = UInt32(MemoryLayout<pid_t>.size);
 
-var deviceToIgnore = "";
+var devicesToIgnore = [String]();
 if CommandLine.argc >= 2 {
-    deviceToIgnore = CommandLine.arguments[1]
+    for i in 1..<CommandLine.argc {
+        devicesToIgnore.append(CommandLine.arguments[Int(i)])
+    }
 }
 
 var devices = IdToName()
 
 for deviceId in (devices?.keys)! {
-    if (devices![deviceId] as! String) == deviceToIgnore {
+    if devicesToIgnore.contains(devices![deviceId] as! String) {
+        print("Skipped device: ", devices![deviceId] as! String);
         continue
     }
     
@@ -33,6 +39,8 @@ for deviceId in (devices?.keys)! {
     if(kAudioHardwareNoError != status) {
         stdout.write("Could not hog the device :S".data(using: String.Encoding.utf8)!)
         exit(0)
+    } else {
+        print("Muted device: ", devices![deviceId] as! String);
     }
 }
 
